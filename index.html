@@ -1,872 +1,382 @@
 ﻿
 <!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Kit Proteina + Leave-in + Booster - Wepink</title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kit Proteína + Leave-in + Booster - Wepink</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-   tailwind.config = {
-        content: [],
-        theme: {
-          extend: {
-            fontFamily: {
-              montserrat: ["Montserrat", "sans-serif"],
-              apple_system: [
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "avenir next",
-                "avenir",
-                "helvetica neue",
-                "helvetica",
-                "ubuntu",
-                "roboto",
-                "noto",
-                "segoe ui",
-                "arial",
-                "sans-serif",
-              ],
-              century_gothic: [
-                "Century Gothic",
-                "Montserrat",
-                "San Francisco",
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "avenir next",
-                "avenir",
-                "helvetica neue",
-                "helvetica",
-                "ubuntu",
-                "roboto",
-                "noto",
-                "segoe ui",
-                "arial",
-                "sans-serif",
-              ],
-              open_sans: ["Open Sans", "sans-serif"],
-              material_icons: ["Material Icons"],
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            pink: {
+              500: '#ec4899',
+              600: '#db2777',
+              700: '#be185d',
+            },
+            rose: {
+              300: '#fda4af',
             },
           },
         },
-      };
+      },
+    };
   </script>
   <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Bold___2eb6d82a8c0309d5608c1d7bb23ae519.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Bold___aeb96d9cbf853b2d889e4c8f2d61a1a3.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Bold___d14ad1035ae6da4e5a71eca362a8d696.ttf")
-            format("truetype");
-        font-weight: 700;
-        font-style: normal;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; }
+    
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+    
+    /* FAQ accordion */
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-content.open { max-height: 500px; }
+    
+    /* Mobile menu */
+    #mobile-menu { transform: translateX(-100%); transition: transform 0.3s ease; }
+    #mobile-menu.open { transform: translateX(0); }
+    
+    /* Toast notification */
+    .toast { animation: slideUp 0.3s ease, fadeOut 0.3s ease 2.7s forwards; }
+    @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeOut { to { opacity: 0; } }
   </style>
-  <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Regular___86b129bd42fade3ccae4d14c8b5465ad.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Regular___c786f0f1988479d380b738ccf2791e61.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Regular___34de1239b12123b85ff1a68b58835a1f.ttf")
-            format("truetype");
-        font-weight: 400;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Medium___e8b81fb2eb5b57387c92ea63e234b5b4.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Medium___27247d02a87eecf622f27d1e723ebf5d.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Medium___aca6287f22eef510c1e622c97bb1e1e1.ttf")
-            format("truetype");
-        font-weight: 500;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        /* @FONTWARNING[{"type":"restricted","family":"Century Gothic","weight":"700","style":"normal","allowsCrossOrigin":true}] */
-        font-family: "Century Gothic";
-        src:
-          url("assets/fonts/Century-Gothic___30f1a7d7e1091a565408cdf4b818e491.woff2")
-            format("woff2"),
-          url("assets/fonts/Century-Gothic___12405881add4ab9d841f82e189492e98.woff")
-            format("woff"),
-          url("assets/fonts/Century-Gothic___ae704b1128b630b4b838a9c85a53e653.ttf")
-            format("truetype");
-        font-weight: 700;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Bold___2eb6d82a8c0309d5608c1d7bb23ae519.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Bold___aeb96d9cbf853b2d889e4c8f2d61a1a3.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Bold___d14ad1035ae6da4e5a71eca362a8d696.ttf")
-            format("truetype");
-        font-weight: 700;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Regular___86b129bd42fade3ccae4d14c8b5465ad.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Regular___c786f0f1988479d380b738ccf2791e61.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Regular___34de1239b12123b85ff1a68b58835a1f.ttf")
-            format("truetype");
-        font-weight: 400;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        font-family: "Montserrat";
-        src:
-          url("assets/fonts/Montserrat-Medium___e8b81fb2eb5b57387c92ea63e234b5b4.woff2")
-            format("woff2"),
-          url("assets/fonts/Montserrat-Medium___27247d02a87eecf622f27d1e723ebf5d.woff")
-            format("woff"),
-          url("assets/fonts/Montserrat-Medium___aca6287f22eef510c1e622c97bb1e1e1.ttf")
-            format("truetype");
-        font-weight: 500;
-        font-style: normal;
-      }
-  </style>
-  <style>
-   @font-face {
-        /* @FONTWARNING[{"type":"restricted","family":"Century Gothic","weight":"700","style":"normal","allowsCrossOrigin":true}] */
-        font-family: "Century Gothic";
-        src:
-          url("assets/fonts/Century-Gothic___30f1a7d7e1091a565408cdf4b818e491.woff2")
-            format("woff2"),
-          url("assets/fonts/Century-Gothic___12405881add4ab9d841f82e189492e98.woff")
-            format("woff"),
-          url("assets/fonts/Century-Gothic___ae704b1128b630b4b838a9c85a53e653.ttf")
-            format("truetype");
-        font-weight: 700;
-        font-style: normal;
-      }
-  </style>
-  <script src="/load.js">
-  </script>
-  <script src="/static/anima.min.js" type="module">
-  </script>
-  <style>
-    /* =============================================================
-       RESPONSIVIDADE — Mobile-first
-       Breakpoints: 375px (xs), 767px (sm), 1023px (md)
-       ============================================================= */
+</head>
+<body class="bg-white text-gray-900">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white shadow-sm">
+    <!-- Announcement bar -->
+    <div class="bg-pink-600 text-white text-center text-sm py-2 px-4">
+      <p>Frete grátis para todo Brasil em compras acima de R$ 199! ✨</p>
+    </div>
+    <!-- Main header -->
+    <div class="flex items-center justify-between max-w-7xl mx-auto px-4 py-3">
+      <button id="menu-btn" class="lg:hidden p-2" aria-label="Menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none"><rect y="0" width="24" height="2.5" rx="1.25" fill="#333"/><rect y="7.5" width="24" height="2.5" rx="1.25" fill="#333"/><rect y="15" width="24" height="2.5" rx="1.25" fill="#333"/></svg>
+      </button>
+      <a href="#" class="flex items-center">
+        <span class="text-2xl font-bold text-pink-600">Wepink</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#produto" class="text-sm font-medium hover:text-pink-600 transition">Produto</a>
+        <a href="#beneficios" class="text-sm font-medium hover:text-pink-600 transition">Benefícios</a>
+        <a href="#avaliacoes" class="text-sm font-medium hover:text-pink-600 transition">Avaliações</a>
+        <a href="#faq" class="text-sm font-medium hover:text-pink-600 transition">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="p-2 hover:bg-gray-100 rounded-full transition" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="6" stroke="#333" stroke-width="1.8"/><path d="M13 13l5 5" stroke="#333" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-full transition" aria-label="Carrinho">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1 1h2.5l2 10h9l2-7H5" stroke="#333" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17.5" r="1.5" fill="#333"/><circle cx="15.5" cy="17.5" r="1.5" fill="#333"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-lg z-50 lg:hidden">
+      <div class="flex items-center justify-between p-4 border-b">
+        <span class="text-xl font-bold text-pink-600">Wepink</span>
+        <button id="close-menu" class="p-2" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 2l16 16M18 2L2 18" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4 gap-4">
+        <a href="#produto" class="text-base font-medium hover:text-pink-600 transition">Produto</a>
+        <a href="#beneficios" class="text-base font-medium hover:text-pink-600 transition">Benefícios</a>
+        <a href="#avaliacoes" class="text-base font-medium hover:text-pink-600 transition">Avaliações</a>
+        <a href="#faq" class="text-base font-medium hover:text-pink-600 transition">FAQ</a>
+      </nav>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/30 z-40 hidden lg:hidden"></div>
+  </header>
 
-    /* -------------------------------------------------------
-       MOBILE HEADER: ativo em < 768px
-    ------------------------------------------------------- */
-    @media (max-width: 767px) {
-      /* =====================================================
-         FIX OVERFLOW HORIZONTAL — mobile only
-         ===================================================== */
-
-      /* Raiz: bloqueia qualquer vazamento */
-      html, body {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-      }
-
-      /* Slider do anuncio — 400% + translate vazava para fora */
-      #slider-wrapper { overflow: hidden !important; }
-      #slider-400 {
-        width: 100% !important;
-        transform: none !important;
-        display: flex !important;
-        justify-content: center !important;
-      }
-      /* Mostra apenas o slide ativo (o 2o filho, aria-label com 'Slide atual') */
-      #slider-400 > div[role='none presentation'] { display: none !important; }
-
-      /* Container da imagem: w-[623px] fixo */
-      #product-img-sizer {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Nav desktop: oculta mas garante sem overflow residual */
-      #desktop-nav {
-        display: none !important;
-        overflow: hidden !important;
-      }
-
-      /* Avaliações: min-w-[310px] */
-      #reviews-layout {
-        min-width: 0 !important;
-        width: 100% !important;
-      }
-
-      /* Reviews: colunas de texto w-[713px] */
-      #reviews-layout .md:w-[713px],
-      #reviews-layout [class*='md:w-[713'] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Botao carregar mais: min-w-[265px] */
-      #load-more-btn {
-        min-width: 0 !important;
-        max-width: 80% !important;
-        padding-left: 24px !important;
-        padding-right: 24px !important;
-      }
-
-      /* Caracteristicas: estoura o padding lateral do pai para tocar as bordas */
-      #caracteristicas-box {
-        margin-left: -16px !important;
-        margin-right: -16px !important;
-        width: calc(100% + 32px) !important;
-      }
-
-      /* Botao comprar fixo: sem overflow lateral */
-      .fixed.bottom-0 {
-        left: 0 !important;
-        right: 0 !important;
-        width: 100vw !important;
-        max-width: 100% !important;
-      }
-
-      #mobile-header { display: flex !important; }
-      #announcement-bar { display: none !important; }
-      #desktop-header-row { display: none !important; }
-
-      /* Placeholder: altura do mobile header */
-      #header-placeholder { height: 58px !important; }
-
-      /* Oculta nav desktop */
-      #desktop-nav { display: none !important; }
-
-      /* PRODUTO: imagem full-width, centralizada, sem corte */
-      #product-main-row { flex-direction: column !important; }
-      #product-image-col {
-        width: 100% !important;
-        padding-right: 0 !important;
-        margin: 0 !important;
-      }
-      #product-info-col {
-        width: 100% !important;
-        padding: 0 16px !important;
-      }
-
-      /* Remove o w-[623px] fixo */
-      #product-img-sizer {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* Fundo cinza, imagem centralizada, sem crop */
-      #product-image-col .bg-zinc-100 {
-        background-color: #f4f4f5 !important;
-        border-radius: 0 !important;
-      }
-      #product-image-col img[src*='produto-800'] {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        margin: 0 auto !important;
-      }
-
-      /* Padding geral da secao produto */
-      #product-section-wrapper {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-
-      /* Titulo do produto */
-      #product-info-col h1 span {
-        font-size: 20px !important;
-        line-height: 1.35 !important;
-      }
-
-      /* Botao comprar: z-index acima do conteudo */
-      body { padding-bottom: 62px; }
-
-      /* Box Caracteristicas: sem border-radius no mobile */
-      .bg-rose-300 {
-        border-radius: 0 !important;
-        padding: 20px 16px !important;
-      }
-
-      /* Footer: coluna unica */
-      #footer-main-row {
-        flex-direction: column !important;
-        padding: 36px 20px 56px !important;
-        gap: 28px;
-      }
-      #footer-main-row > div { width: 100% !important; }
-
-      /* Pagamentos: sem padding lateral excessivo */
-      .px-20 { padding-left: 0 !important; padding-right: 0 !important; }
-
-      /* Newsletter: inputs empilhados */
-      .md:flex-row {
-        flex-direction: column !important;
-        gap: 12px !important;
-      }
-
-      /* WhatsApp botao */
-      a[href*='whatsapp'].fixed {
-        font-size: 10px !important;
-        right: -34px !important;
-        bottom: 100px !important;
-      }
-    }
-
-    /* -------------------------------------------------------
-       MOBILE PEQUENO — ate 375px
-    ------------------------------------------------------- */
-    @media (max-width: 375px) {
-      #product-info-col h1 span { font-size: 16px !important; }
-      .bg-zinc-100.p-5 { padding: 12px !important; }
-      #footer-main-row { padding: 28px 12px 48px !important; }
-    }
-
-    /* -------------------------------------------------------
-       TABLET — 768px a 1023px
-    ------------------------------------------------------- */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      #mobile-header { display: none !important; }
-      #header-placeholder { height: 140px !important; }
-
-      /* Layout produto: 55/45 lado a lado */
-      #product-main-row { flex-direction: row !important; }
-      #product-image-col {
-        width: 55% !important;
-        padding-right: 20px !important;
-      }
-      #product-info-col { width: 45% !important; }
-
-      #product-img-sizer {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      #product-image-col img[src*='produto-800'] {
-        max-height: 480px !important;
-        object-fit: contain !important;
-      }
-
-      #product-section-wrapper {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-
-      /* Nav com scroll horizontal */
-      #desktop-nav {
-        display: flex !important;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-      #desktop-nav::-webkit-scrollbar { display: none; }
-      #desktop-nav ul { flex-wrap: nowrap; min-width: max-content; }
-      #desktop-nav li { flex-shrink: 0; }
-
-      /* Footer 2 colunas */
-      #footer-main-row {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        padding: 48px 28px 64px !important;
-        gap: 28px;
-      }
-      #footer-main-row > div:nth-child(1) { width: 42% !important; }
-      #footer-main-row > div:nth-child(2) { width: 24% !important; }
-      #footer-main-row > div:nth-child(3) { width: 24% !important; }
-    }
-
-    /* -------------------------------------------------------
-       DESKTOP — >= 1024px
-    ------------------------------------------------------- */
-    @media (min-width: 1024px) {
-      #mobile-header { display: none !important; }
-    }
-  </style>
- </head>
- <body class="accent-auto bg-white box-border caret-transparent text-black block text-base not-italic normal-nums font-normal tracking-[normal] leading-[18.4px] list-outside list-disc outline-[3px] pointer-events-auto text-start no-underline indent-[0px] normal-case visible border-separate font-montserrat">
-  <div class="box-border caret-transparent hidden outline-[3px] no-underline">
-  </div>
-  <div class="box-border caret-transparent outline-[3px] no-underline">
-   <div class="box-border caret-transparent outline-[3px] no-underline">
-    <div class="bg-white box-border caret-transparent outline-[3px] no-underline">
-     <div class="box-border caret-transparent flex flex-col min-h-[1000px] outline-[3px] no-underline w-full">
-      <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-       <div class="box-border caret-transparent flex flex-col min-h-[1000px] outline-[3px] no-underline w-full">
-        <div id="header-placeholder" class="bg-zinc-100 box-border caret-transparent h-[182px] min-h-[auto] min-w-[auto] outline-[3px] relative no-underline">
-         <div class="box-border caret-transparent outline-[3px] fixed no-underline z-[999] top-0 inset-x-0">
-          <!-- MOBILE HEADER: visível apenas em mobile (<768px) -->
-          <div id="mobile-header" class="hidden items-center justify-between bg-white shadow-[rgba(0,0,0,0.1)_0px_2px_6px_0px] px-4 py-3">
-           <button id="mobile-menu-btn" aria-label="Menu" class="flex items-center justify-center w-9 h-9 bg-transparent border-none cursor-pointer">
-            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-             <rect y="0" width="22" height="2.2" rx="1.1" fill="#222"/>
-             <rect y="6.9" width="22" height="2.2" rx="1.1" fill="#222"/>
-             <rect y="13.8" width="22" height="2.2" rx="1.1" fill="#222"/>
-            </svg>
-           </button>
-           <a href="#" class="flex items-center">
-            <img alt="Wepink" src="assets/images/logo-primary.svg" class="w-[110px]"/>
-           </a>
-           <div class="flex items-center gap-3">
-            <button aria-label="Minha conta" class="flex items-center justify-center w-9 h-9 bg-transparent border-none cursor-pointer">
-             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="11" cy="7" r="4" stroke="#222" stroke-width="1.7"/>
-              <path d="M2 20c0-4.418 4.03-8 9-8s9 3.582 9 8" stroke="#222" stroke-width="1.7" stroke-linecap="round"/>
-             </svg>
-            </button>
-            <button aria-label="Carrinho" class="flex items-center justify-center w-9 h-9 bg-transparent border-none cursor-pointer">
-             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1h3l2.4 11h10.2l2.4-8H5.8" stroke="#222" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="8.5" cy="18.5" r="1.5" fill="#222"/>
-              <circle cx="16.5" cy="18.5" r="1.5" fill="#222"/>
-             </svg>
-            </button>
-           </div>
+  <!-- Main content -->
+  <main class="pt-[120px]">
+    <!-- Hero / Product section -->
+    <section id="produto" class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+      <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+        <!-- Product image -->
+        <div class="w-full md:w-1/2">
+          <div class="bg-gray-100 rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1611933481457-2f8b2e5b0b3e?w=600&h=600&fit=crop" alt="Kit Proteína + Leave-in + Booster" class="w-full h-auto object-cover aspect-square"/>
           </div>
-          <!-- / MOBILE HEADER -->
-          <div id="announcement-bar" aria-label="Linha de sessão" class="bg-pink-600 box-border caret-transparent outline-[3px] no-underline">
-           <section class="box-border caret-transparent max-w-screen-2xl outline-[3px] no-underline mx-auto px-0 md:px-1">
-            <div class="items-center box-border caret-transparent flex justify-center outline-[3px] no-underline w-full px-0 py-3 md:px-7">
-             <div class="items-stretch box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-              <section id="slider-wrapper" aria-label="slider" class="items-center box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-full overflow-hidden">
-               <div class="box-border caret-transparent max-w-[1520px] min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full overflow-hidden">
-                <div id="slider-400" class="box-border caret-transparent flex justify-around outline-[3px] relative no-underline translate-x-[-25.0%] w-[400%]">
-                 <div class="box-border caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-3/12" role="none presentation">
-                  <div class="items-center box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full px-2">
-                  </div>
-                 </div>
-                 <div aria-label="Slide atual é 1 de 2" class="box-border caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-3/12" role="group">
-                  <div class="items-center box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full px-2">
-                   <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <div class="items-center box-border caret-transparent gap-x-1 block justify-between outline-[3px] gap-y-1 no-underline md:flex">
-                     <div class="items-center box-border caret-transparent flex flex-col grow max-w-full min-h-0 min-w-0 outline-[3px] no-underline z-[1] md:min-h-[auto] md:min-w-[auto]">
-                      <div class="items-start box-border caret-transparent text-neutral-700 flex justify-start min-h-[auto] min-w-[auto] outline-[3px] text-left no-underline">
-                       <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                        <p class="box-border caret-transparent text-white text-sm leading-5 outline-[3px] no-underline">
-                         Fique ligado! A inclusão do
-                                                  produto na cesta não garante
-                                                  sua compra.
-                         <a class="box-border caret-transparent outline-[3px] underline" href="#">
-                          <span class="caret-transparent font-bold outline-[3px] no-underline">
-                           Finalize o
-                                                      carrinho!
-                          </span>
-                         </a>
-                        </p>
-                       </div>
-                      </div>
-                      <a alt="" class="box-border caret-transparent text-blue-700 hidden outline-[3px] underline my-6" href="#">
-                       <button class="bg-pink-600 caret-transparent text-white font-medium leading-4 min-h-10 outline-[3px] relative text-center no-underline align-middle p-0 rounded-lg hover:bg-pink-500 hover:border-pink-600" type="button">
-                        <div class="items-center box-border caret-transparent flex text-sm font-bold h-full justify-center leading-8 outline-[3px] no-underline pt-[3.5px] pb-[4.48px] px-6">
-                        </div>
-                       </button>
-                      </a>
-                     </div>
-                     <div class="box-border caret-transparent min-h-0 min-w-0 outline-[3px] no-underline md:min-h-[auto] md:min-w-[auto]">
-                      <img alt="" class="caret-transparent max-w-full object-cover outline-[3px] no-underline align-baseline w-full"/>
-                     </div>
-                    </div>
-                   </div>
-                  </div>
-                 </div>
-                 <div aria-label="Slide atual é 2 de 2" class="box-border caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-3/12" role="group">
-                  <div class="items-center box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full px-2">
-                   <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <div class="items-center box-border caret-transparent gap-x-1 block justify-between outline-[3px] gap-y-1 no-underline md:flex">
-                     <div class="items-center box-border caret-transparent flex flex-col grow max-w-full min-h-0 min-w-0 outline-[3px] no-underline z-[1] md:min-h-[auto] md:min-w-[auto]">
-                      <div class="items-start box-border caret-transparent text-neutral-700 flex justify-start min-h-[auto] min-w-[auto] outline-[3px] text-left no-underline">
-                       <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                        <p class="box-border caret-transparent text-white text-sm leading-5 outline-[3px] no-underline">
-                         Dúvidas sobre produtos e
-                                                  atendimento acesse a
-                         <a class="box-border caret-transparent outline-[3px] underline" href="#">
-                          <span class="caret-transparent font-bold outline-[3px] no-underline">
-                           Central de Ajuda
-                          </span>
-                         </a>
-                        </p>
-                       </div>
-                      </div>
-                      <a alt="" class="box-border caret-transparent text-blue-700 hidden outline-[3px] underline my-6" href="#">
-                       <button class="bg-pink-600 caret-transparent text-white font-medium leading-4 min-h-10 outline-[3px] relative text-center no-underline align-middle p-0 rounded-lg hover:bg-pink-500 hover:border-pink-600" type="button">
-                        <div class="items-center box-border caret-transparent flex text-sm font-bold h-full justify-center leading-8 outline-[3px] no-underline pt-[3.5px] pb-[4.48px] px-6">
-                        </div>
-                       </button>
-                      </a>
-                     </div>
-                     <div class="box-border caret-transparent min-h-0 min-w-0 outline-[3px] no-underline md:min-h-[auto] md:min-w-[auto]">
-                      <img alt="" class="caret-transparent max-w-full object-cover outline-[3px] no-underline align-baseline w-full"/>
-                     </div>
-                    </div>
-                   </div>
-                  </div>
-                 </div>
-                 <div class="box-border caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-3/12" role="none presentation">
-                  <div class="items-center box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full px-2">
-                   <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <div class="items-center box-border caret-transparent gap-x-1 block justify-between outline-[3px] gap-y-1 no-underline md:flex">
-                     <div class="items-center box-border caret-transparent flex flex-col grow max-w-full min-h-0 min-w-0 outline-[3px] no-underline z-[1] md:min-h-[auto] md:min-w-[auto]">
-                      <div class="items-start box-border caret-transparent text-neutral-700 flex justify-start min-h-[auto] min-w-[auto] outline-[3px] text-left no-underline">
-                       <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                        <p class="box-border caret-transparent text-white text-sm leading-5 outline-[3px] no-underline">
-                         Fique ligado! A inclusão do
-                                                  produto na cesta não garante
-                                                  sua compra.
-                         <a class="box-border caret-transparent outline-[3px] underline" href="#">
-                          <span class="caret-transparent font-bold outline-[3px] no-underline">
-                           Finalize o
-                                                      carrinho!
-                          </span>
-                         </a>
-                        </p>
-                       </div>
-                      </div>
-                      <a alt="" class="box-border caret-transparent text-blue-700 hidden outline-[3px] underline my-6" href="#">
-                       <button class="bg-pink-600 caret-transparent text-white font-medium leading-4 min-h-10 outline-[3px] relative text-center no-underline align-middle p-0 rounded-lg hover:bg-pink-500 hover:border-pink-600" type="button">
-                        <div class="items-center box-border caret-transparent flex text-sm font-bold h-full justify-center leading-8 outline-[3px] no-underline pt-[3.5px] pb-[4.48px] px-6">
-                        </div>
-                       </button>
-                      </a>
-                     </div>
-                     <div class="box-border caret-transparent min-h-0 min-w-0 outline-[3px] no-underline md:min-h-[auto] md:min-w-[auto]">
-                      <img alt="" class="caret-transparent max-w-full object-cover outline-[3px] no-underline align-baseline w-full"/>
-                     </div>
-                    </div>
-                   </div>
-                  </div>
-                 </div>
-                </div>
-               </div>
-              </section>
-             </div>
-            </div>
-           </section>
-          </div>
-          <div id="desktop-header-row" aria-label="Linha de sessão" class="box-border caret-transparent outline-[3px] no-underline"><div class="items-center backdrop-blur bg-zinc-100/80 shadow-[rgba(0,0,0,0.1)_0px_4px_5px_0px] box-border caret-transparent flex justify-around outline-[3px] no-underline w-full px-2 md:px-4">
-            <div class="items-stretch box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-             <div class="box-border caret-transparent flex flex-col h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-              <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-               <div aria-label="Linha de sessão" class="box-border caret-transparent outline-[3px] no-underline">
-                <div class="items-center box-border caret-transparent flex justify-between max-w-screen-2xl outline-[3px] no-underline w-full m-auto">
-                 <div class="box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <a class="box-border caret-transparent text-blue-700 block min-h-[auto] min-w-[auto] outline-[3px] underline w-full" href="#">
-                   <span class="caret-transparent block max-h-[75px] max-w-[150px] min-w-[120px] outline-[3px] no-underline pl-[50px] py-3 md:pl-6">
-                    <img alt="Wepink" class="caret-transparent inline max-w-full outline-[3px] no-underline align-baseline w-[130px]" src="assets/images/logo-primary.svg"/>
-                   </span>
-                  </a>
-                 </div>
-                 <div class="box-border caret-transparent flex grow justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="box-border caret-transparent max-w-full min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full py-3 md:max-w-[95%]">
-                   <div class="box-border caret-transparent outline-[3px] static no-underline w-full md:relative" role="combobox">
-                    <div class="box-border caret-transparent outline-[3px] no-underline">
-                     <div class="box-border caret-transparent flex outline-[3px] no-underline w-full">
-                      <label class="caret-transparent block min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-                       <div class="items-stretch box-border caret-transparent flex flex-row-reverse h-[42px] outline-[3px] no-underline overflow-hidden rounded-xl">
-                        <input class="appearance-none box-border caret-transparent block text-xs leading-[26px] min-h-[auto] min-w-[auto] no-underline w-full pl-0 rounded-[1px]" placeholder="digite aqui o que procura..." type="text" value=""/>
-                        <span class="items-center bg-white caret-transparent text-neutral-400 flex font-medium min-h-[auto] min-w-[auto] outline-[3px] no-underline pl-3 rounded-r-none md:rounded-br md:rounded-tr">
-                         <div class="box-border caret-transparent flex h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                          <button aria-label="Buscar produtos" class="items-center bg-transparent caret-transparent text-stone-950/30 flex font-normal min-h-[auto] min-w-[auto] text-center no-underline pl-0 pr-2 py-0 font-apple_system">
-                           <img alt="Icon" class="caret-transparent text-pink-600 h-4 outline-[3px] no-underline align-baseline w-4" src="assets/icons/icon-1.svg"/>
-                          </button>
-                         </div>
-                        </span>
-                       </div>
-                      </label>
-                     </div>
-                    </div>
-                    <div class="box-border caret-transparent outline-[3px] no-underline">
-                    </div>
-                    <div class="box-border caret-transparent h-px outline-[3px] no-underline -mt-px">
-                    </div>
-                   </div>
-                  </div>
-                 </div>
-                 <div class="box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-                   <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <a class="box-border caret-transparent gap-x-0.5 flex leading-6 outline-[3px] gap-y-0.5 no-underline font-montserrat before:accent-auto before:bg-[url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNiIgdmlld0JveD0iMCAwIDI1IDI2IiBmaWxsPSJub25lIj4KICA8cGF0aCBkPSJNNy42NTk1IDE3Ljk2NjdDNy45Njk0OSAxNy45NjY3IDguMjY2NzkgMTcuODM0NSA4LjQ4NTk4IDE3LjU5OUM4LjcwNTE4IDE3LjM2MzUgOC44MjgzMyAxNy4wNDQyIDguODI4MzMgMTYuNzExMkM4LjgyODMzIDE2LjM3ODIgOC43MDUxOCAxNi4wNTg4IDguNDg1OTggMTUuODIzM0M4LjI2Njc5IDE1LjU4NzkgNy45Njk0OSAxNS40NTU2IDcuNjU5NSAxNS40NTU2QzcuMzQ5NSAxNS40NTU2IDcuMDUyMjEgMTUuNTg3OSA2LjgzMzAxIDE1LjgyMzNDNi42MTM4MSAxNi4wNTg4IDYuNDkwNjcgMTYuMzc4MiA2LjQ5MDY3IDE2LjcxMTJDNi40OTA2NyAxNy4wNDQyIDYuNjEzODEgMTcuMzYzNSA2LjgzMzAxIDE3LjU5OUM3LjA1MjIxIDE3LjgzNDUgNy4zNDk1IDE3Ljk2NjcgNy42NTk1IDE3Ljk2NjdaTTYuNDkwNjcgMTAuNDMzM0w0Ljk2MzM5IDEyLjUyNTlIOC40Mzg3MlYxMC40MzMzTTE3LjAxMDEgMTcuOTY2N0MxNy4zMjAxIDE3Ljk2NjcgMTcuNjE3NCAxNy44MzQ1IDE3LjgzNjYgMTcuNTk5QzE4LjA1NTggMTcuMzYzNSAxOC4xNzkgMTcuMDQ0MiAxOC4xNzkgMTYuNzExMkMxOC4xNzkgMTYuMzc4MiAxOC4wNTU4IDE2LjA1ODggMTcuODM2NiAxNS44MjMzQzE3LjYxNzQgMTUuNTg3OSAxNy4zMjAxIDE1LjQ1NTYgMTcuMDEwMSAxNS40NTU2QzE2LjcwMDIgMTUuNDU1NiAxNi40MDI5IDE1LjU4NzkgMTYuMTgzNyAxNS44MjMzQzE1Ljk2NDUgMTYuMDU4OCAxNS44NDEzIDE2LjM3ODIgMTUuODQxMyAxNi43MTEyQzE1Ljg0MTMgMTcuMDQ0MiAxNS45NjQ1IDE3LjM2MzUgMTYuMTgzNyAxNy41OTlDMTYuNDAyOSAxNy44MzQ1IDE2LjcwMDIgMTcuOTY2NyAxNy4wMTAxIDE3Ljk2NjdaTTYuMTAxMDYgOS4xNzc2OEg4LjQzODcyVjUuODI5NDdIMTkuMzQ3OEMyMC4yMTI3IDUuODI5NDcgMjAuOTA2MiA2LjU3NDQ1IDIwLjkwNjIgNy41MDM1N1YxNi43MTEySDE5LjM0NzhDMTkuMzQ3OCAxNy4zNzcyIDE5LjEwMTUgMTguMDE1OSAxOC42NjMxIDE4LjQ4NjhDMTguMjI0NyAxOC45NTc4IDE3LjYzMDEgMTkuMjIyMyAxNy4wMTAxIDE5LjIyMjNDMTYuMzkwMiAxOS4yMjIzIDE1Ljc5NTYgMTguOTU3OCAxNS4zNTcyIDE4LjQ4NjhDMTQuOTE4OCAxOC4wMTU5IDE0LjY3MjUgMTcuMzc3MiAxNC42NzI1IDE2LjcxMTJIOS45OTcxNkM5Ljk5NzE2IDE3LjM3NzIgOS43NTA4NyAxOC4wMTU5IDkuMzEyNDcgMTguNDg2OEM4Ljg3NDA4IDE4Ljk1NzggOC4yNzk0OCAxOS4yMjIzIDcuNjU5NSAxOS4yMjIzQzcuMDM5NTEgMTkuMjIyMyA2LjQ0NDkyIDE4Ljk1NzggNi4wMDY1MiAxOC40ODY4QzUuNTY4MTIgMTguMDE1OSA1LjMyMTgzIDE3LjM3NzIgNS4zMjE4MyAxNi43MTEySDMuNzYzMzlWMTIuNTI1OUw2LjEwMTA2IDkuMTc3NjhaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4=)] before:caret-transparent before:text-black before:block before:text-base before:not-italic before:normal-nums before:font-normal before:h-[25px] before:tracking-[normal] before:leading-6 before:list-outside before:list-disc before:min-h-[auto] before:min-w-[auto] before:outline-[3px] before:pointer-events-auto before:text-start before:no-underline before:indent-[0px] before:normal-case before:visible before:w-6 before:border-separate before:font-montserrat hover:text-pink-600 hover:border-pink-600" href="#">
-                     <span class="caret-transparent block min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                      Rastreio
-                     </span>
-                    </a>
-                   </div>
-                   <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <a class="items-center box-border caret-transparent gap-x-1 flex leading-6 outline-[3px] gap-y-1 no-underline pl-3.5 font-montserrat before:accent-auto before:bg-[url(data:image/svg+xml,%3Csvg%20width=%2732%27%20height=%2732%27%20viewBox=%270%200%2032%2032%27%20fill=%27none%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath%20d=%27M27.3333%207.33334H12.6667C7.71563%207.33334%204%2010.9134%204%2016%27%20stroke=%27currentColor%27%20stroke-width=%271.5%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3Cpath%20d=%27M4.66699%2024.6667H19.3337C24.2847%2024.6667%2028.0003%2021.0867%2028.0003%2016%27%20stroke=%27currentColor%27%20stroke-width=%271.5%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3Cpath%20d=%27M24.667%204C24.667%204%2028.0003%206.45496%2028.0003%207.33336C28.0003%208.21176%2024.667%2010.6667%2024.667%2010.6667%27%20stroke=%27currentColor%27%20stroke-width=%271.5%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3Cpath%20d=%27M7.33331%2021.3333C7.33331%2021.3333%204.00001%2023.7883%204%2024.6667C3.99999%2025.5451%207.33333%2028%207.33333%2028%27%20stroke=%27currentColor%27%20stroke-width=%271.5%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3C/svg%3E%0A)] before:bg-center before:bg-size-[100%] before:caret-transparent before:text-black before:block before:text-base before:not-italic before:normal-nums before:font-normal before:h-5 before:tracking-[normal] before:leading-6 before:list-outside before:list-disc before:min-h-[auto] before:min-w-[auto] before:outline-[3px] before:pointer-events-auto before:text-start before:no-underline before:indent-[0px] before:normal-case before:visible before:w-5 before:border-separate before:font-montserrat hover:text-pink-600 hover:border-pink-600" href="#">
-                     <span class="caret-transparent block min-h-[auto] min-w-[auto] outline-[3px] no-underline text-nowrap">
-                      Trocar e Devolver
-                     </span>
-                    </a>
-                   </div>
-                   <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <div class="items-center box-border caret-transparent flex float-right outline-[3px] no-underline">
-                     <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] relative no-underline">
-                      <div class="items-center box-border caret-transparent flex justify-center outline-[3px] no-underline ml-0 md:ml-2.5">
-                       <button class="bg-transparent caret-transparent text-white block font-medium leading-4 mt-[-5px] min-h-10 min-w-[auto] outline-[3px] relative text-center no-underline align-middle w-10 p-0 rounded-lg hover:border-transparent" type="button">
-                        <div class="items-center box-border caret-transparent flex text-sm font-bold h-full justify-center leading-8 outline-[3px] no-underline after:accent-auto after:caret-transparent after:text-white after:block after:text-sm after:not-italic after:normal-nums after:font-bold after:h-5 after:tracking-[normal] after:leading-8 after:list-outside after:list-disc after:min-h-[auto] after:min-w-[auto] after:outline-[3px] after:pointer-events-auto after:text-center after:no-underline after:indent-[0px] after:normal-case after:visible after:w-5 after:border-separate after:font-montserrat">
-                         <span class="items-center caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] no-underline -mr-1">
-                          <div class="items-center box-border caret-transparent flex min-h-[auto] min-w-[auto] outline-[3px] no-underline -ml-2 mr-2">
-                           <div class="items-center box-border caret-transparent text-neutral-400 flex min-h-[auto] min-w-[auto] outline-[3px] no-underline -mr-3">
-                            <img alt="Icon" class="caret-transparent text-pink-600 hidden h-[15px] outline-[3px] no-underline align-baseline w-[15px] border-pink-600 pt-[5px] px-[3px] rounded-[50%] border-2 border-solid" src="assets/icons/icon-2.svg"/>
-                           </div>
-                          </div>
-                          <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                          </div>
-                         </span>
-                        </div>
-                       </button>
-                      </div>
-                     </div>
-                    </div>
-                   </div>
-                   <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                    <aside class="items-center box-border caret-transparent flex float-right outline-[3px] relative no-underline">
-                     <div class="box-border caret-transparent flex flex-col min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                      <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline pl-2.5" role="presentation">
-                       <button class="bg-transparent caret-transparent text-white text-[0px] font-medium leading-[0px] outline-[3px] relative text-center no-underline align-middle p-0 rounded-lg hover:border-transparent" type="button">
-                        <div class="items-center box-border caret-transparent flex text-sm font-bold h-full justify-center leading-8 outline-[3px] no-underline">
-                         <span class="caret-transparent text-neutral-400 block h-[25px] min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-[25px]">
-                          <img alt="" class="caret-transparent hidden h-5 max-w-full outline-[3px] no-underline align-baseline w-5 md:inline" src="assets/images/mini-cart.svg" title=""/>
-                         </span>
-                        </div>
-                       </button>
-                      </div>
-                     </div>
-                    </aside>
-                   </div>
-                  </div>
-                 </div>
-                </div>
-               </div>
-              </div>
-              <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-               <nav id="desktop-nav" class="box-border caret-transparent flex justify-center outline-[3px] no-underline m-auto">
-                <ul class="box-border caret-transparent flex justify-evenly list-none max-w-screen-2xl min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full pl-0">
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 outline-[3px] no-underline mx-3.5 py-1">
-                   <a class="items-center bg-pink-600 box-border caret-transparent text-blue-700 flex text-sm h-9 leading-[16.1px] min-h-[auto] min-w-max outline-[3px] no-underline px-3.5 rounded-lg" href="#" title="factory outlet">
-                    <img alt="factory outlet" class="caret-transparent max-h-[18px] max-w-full min-h-[auto] min-w-[auto] outline-[3px] no-underline align-baseline mr-2" src="assets/images/factory-outlet.png"/>
-                    <div class="box-border caret-transparent text-white text-base font-semibold leading-[17px] min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                     factory outlet
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="kits">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     kits
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="bath&amp;body">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     bath&amp;body
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="body splash">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     body splash
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="perfume">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     perfumaria
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="skin care">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     skincare
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="body cream">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     body cream
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="The cream">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     the cream
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="the oil">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     the oil
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="make">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     make
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="hair">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     hair
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="Roll-on">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     roll-on
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                 <li class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                  <div class="items-center box-border caret-transparent flex h-14 justify-start outline-[3px] relative no-underline mx-0 py-1 md:justify-normal md:static md:mx-3.5">
-                   <a class="box-border caret-transparent text-neutral-500 block text-sm leading-[16.1px] min-h-[auto] min-w-[auto] outline-[3px] no-underline" href="#" title="moda">
-                    <div class="box-border caret-transparent text-black flex text-base justify-between leading-6 outline-[3px] no-underline text-nowrap hover:text-pink-600 hover:border-pink-600">
-                     bem-estar
-                    </div>
-                   </a>
-                  </div>
-                 </li>
-                </ul>
-               </nav>
-              </div>
-             </div>
-            </div>
-           </div>
-          </div>
-          <div class="box-border caret-transparent outline-[3px] no-underline">
-          </div>
-         </div>
         </div>
-        <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-         <div class="box-border caret-transparent flex flex-col grow outline-[3px] no-underline w-full">
-          <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
+        <!-- Product info -->
+        <div class="w-full md:w-1/2 flex flex-col justify-center">
+          <span class="text-pink-600 font-semibold text-sm uppercase tracking-wider mb-2">Lançamento</span>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Kit Proteína + Leave-in + Booster
+          </h1>
+          <p class="text-gray-600 text-base md:text-lg mb-6 leading-relaxed">
+            Transforme seus cabelos com o kit completo Wepink. Proteína reconstrutora, leave-in hidratante e booster de crescimento — tudo que você precisa para cabelos saudáveis, fortes e radiantes.
+          </p>
+          <!-- Price -->
+          <div class="mb-6">
+            <span class="text-gray-400 line-through text-lg">R$ 199,90</span>
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-bold text-pink-600">R$ 129,90</span>
+              <span class="text-sm text-gray-500">ou 12x de R$ 12,99</span>
+            </div>
           </div>
-          <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
+          <!-- Buy button -->
+          <button id="buy-btn" class="w-full md:w-auto bg-pink-600 hover:bg-pink-700 text-white font-bold text-lg py-4 px-10 rounded-full transition shadow-lg hover:shadow-xl active:scale-95">
+            Comprar agora 🛒
+          </button>
+          <!-- Trust badges -->
+          <div class="flex items-center gap-4 mt-6 text-sm text-gray-500">
+            <span class="flex items-center gap-1">🔒 Compra segura</span>
+            <span class="flex items-center gap-1">🚚 Frete grátis</span>
+            <span class="flex items-center gap-1">✅ Satisfação garantida</span>
           </div>
-          <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-           <div id="product-section-wrapper" aria-label="Linha de sessão" class="box-border caret-transparent outline-[3px] no-underline px-0 md:px-[180px]">
-            <section class="box-border caret-transparent max-w-screen-2xl outline-[3px] no-underline mx-auto px-0 md:px-1">
-             <div id="product-main-row" class="items-stretch box-border caret-transparent flex justify-start outline-[3px] no-underline w-full mt-0 pt-3 md:mt-3 md:pt-8">
-              <div id="product-image-col" class="items-stretch box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-3/5 pr-8">
-               <div class="box-border caret-transparent flex flex-col h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-                <div class="box-border caret-transparent h-full min-h-[auto] min-w-[auto] outline-[3px] no-underline">
-                 <div aria-label="Seção flutuante" class="box-border caret-transparent outline-[3px] relative no-underline top-auto md:sticky md:top-[175px]">
-                  <div class="box-border caret-transparent outline-[3px] relative no-underline w-full z-[1]">
-                   <div aria-label="Linha de sessão" class="box-border caret-transparent outline-[3px] no-underline">
-                    <div class="items-stretch box-border caret-transparent flex justify-start outline-[3px] no-underline w-full">
-                     <div class="items-stretch box-border caret-transparent flex justify-center min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-                      <div class="box-border caret-transparent min-h-[auto] min-w-[auto] outline-[3px] no-underline w-full">
-                       <div class="box-border caret-transparent outline-[3px] relative no-underline w-full overflow-hidden">
-                        <div class="box-border caret-transparent hidden outline-[3px] absolute no-underline w-1/5 left-0 inset-y-0">
-                         <div class="box-border caret-transparent h-full list-none outline-[3px] relative no-underline z-[1] overflow-hidden mx-auto">
-                          <div class="items-center caret-transparent flex flex-col h-full outline-[3px] relative no-underline w-full z-[1]">
-                           <div class="box-border caret-transparent shrink-0 outline-[3px] relative no-underline w-full mb-4">
-                            <figure class="box-border caret-transparent outline-[3px] no-underline">
-                             <img alt="" class="caret-transparent max-w-full outline-[3px] no-underline align-baseline w-full rounded-xl" src="assets/images/produto-150.jpg"/>
-                            </figure>
-                            <div class="box-border caret-transparent outline-[3px] absolute no-underline inset-0">
-                            </div>
-                           </div>
-                          </div>
-                          <span class="bg-[linear-gradient(rgba(0,0,0,0),rgb(255,255,255))] caret-transparent text-pink-600 flex justify-center outline-[3px] absolute no-underline w-full z-[2] pt-8 pb-1 left-0 bottom-0">
-                           <img alt="Icon" class="caret-transparent h-6 outline-[3px] no-underline align-baseline w-6" src="assets/icons/icon-3.svg"/>
-                          </span>
-                          <span class="bg-[linear-gradient(rgb(255,255,255),rgba(0,0,0,0))] caret-transparent text-pink-600 flex justify-center outline-[3px] absolute no-underline w-full z-[2] pt-1 pb-8 left-0 top-0">
-                           <img alt="Icon" class="caret-transparent h-6 outline-[3px] no-underline align-baseline w-6" src="assets/icons/icon-4.svg"/>
-                          </span>
-                         </div>
-                        </div>
-                        <div class="box-border caret-transparent outline-[3px] no-underline w-full">
-                         <div class="bg-zinc-100 box-border caret-transparent list-none outline-[3px] relative no-underline z-[1] overflow-hidden mx-auto md:bg-transparent">
-                          <div class="caret-transparent flex h-full outline-[3px] relative no-underline w-full z-[1]">
-                           <div id="product-img-sizer" class="box-border caret-transparent shrink-0 h-full min-h-[auto] min-w-[auto] outline-[3px] relative no-underline w-[623px] m-auto">
-                            <div class="box-border caret-transparent outline-[3px] no-underline">
-                             <div class="box-border caret-transparent outline-[3px] relative no-underline">
-                              <div class="box-border caret-transparent text-[0px] leading-[0px] outline-[3px] no-underline origin-[0px_0px]">
-                               <img alt="" class="aspect-[auto_623_/_600] caret-transparent inline h-full max-h-[600px] max-w-full object-contain outline-[3px] no-underline align-baseline w-full" src="assets/images/produto-800.jpg" title=""/>
-                              </div>
-                             </div>
-                            </div>
-                           </div>
-                          </div>
-                          <div class="box-border caret-transparent hidden outline-[3px] absolute text-center no-underline z-10">
-                          </div>
-                          <div class="box-border caret-transparent hidden outline-[3px] no-underline">
-                           <span class="caret-transparent text-pink-600 block outline-[3px] absolute no-underline z-[2] pl-8 pr-1 py-12 right-0 top-2/4">
-                            <img alt="Icon" class="caret-transparent inline h-6 outline-[3px] no-underline align-baseline w-6" src="assets/icons/icon-5.svg"/>
-                           </span>
-                           <span class="caret-transparent text-pink-600 block outline-[3px] absolute no-underline z-[2] pl-1 pr-8 py-12 left-0 top-2/4">
-                            <img alt="Icon" class="caret-transparent inline h-6 outline-[3px] no-underline align-baseline w-6" src="assets/icons/icon-6.svg"/>
-                           </span>
-                          </div>
-                         </div>
-                        </div>
-                       </div>
-                      </div>
-                     </div>
-                    </div>
-                   </div>
-                  </div>
-                  <div class="box-border caret-transparent outline-[3px] relative no-underline w-full z-[2] left-0 top-0">
-                  </div>
-                  <div class="box-border caret-transparent outline-[3px] relative no-underline w-full z-[3] left-0 top-0">
-                  </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits section -->
+    <section id="beneficios" class="bg-rose-300/20 py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Por que escolher o Kit Wepink?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div class="text-5xl mb-4">💧</div>
+            <h3 class="text-xl font-bold mb-3">Hidratação Profunda</h3>
+            <p class="text-gray-600">O leave-in penetra na fibra capilar, restaurando a umidade natural dos fios por até 72 horas.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div class="text-5xl mb-4">🛡️</div>
+            <h3 class="text-xl font-bold mb-3">Reconstrução Total</h3>
+            <p class="text-gray-600">A proteína reconstrutora repara danos, fecha as cutículas e devolve a resistência aos fios.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition">
+            <div class="text-5xl mb-4">🚀</div>
+            <h3 class="text-xl font-bold mb-3">Crescimento Acelerado</h3>
+            <p class="text-gray-600">O booster estimula o couro cabeludo, fortalece os folículos e acelera o crescimento saudável.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews section -->
+    <section id="avaliacoes" class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">O que nossas clientes dizem</h2>
+      <p class="text-center text-gray-500 mb-12">Mais de 5.000 avaliações verificadas ⭐ 4.9/5</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center gap-1 mb-3 text-yellow-400">★★★★★</div>
+          <p class="text-gray-700 mb-4">"Meu cabelo estava muito danificado por química. Usei o kit por 1 mês e já vi uma diferença absurda! Super recomendo!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center font-bold text-pink-600">A</div>
+            <div>
+              <p class="font-semibold text-sm">Ana Silva</p>
+              <p class="text-xs text-gray-400">Cliente verificada</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center gap-1 mb-3 text-yellow-400">★★★★★</div>
+          <p class="text-gray-700 mb-4">"O leave-in é maravilhoso! Deixa o cabelo soltinho e cheiroso o dia todo. O booster também ajudou muito no crescimento."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center font-bold text-pink-600">M</div>
+            <div>
+              <p class="font-semibold text-sm">Marina Costa</p>
+              <p class="text-xs text-gray-400">Cliente verificada</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center gap-1 mb-3 text-yellow-400">★★★★★</div>
+          <p class="text-gray-700 mb-4">"Finalmente um kit que realmente funciona! Meu cabelo cresceu 4cm em 2 meses. E o cheirinho é tudo de bom!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center font-bold text-pink-600">J</div>
+            <div>
+              <p class="font-semibold text-sm">Juliana Pereira</p>
+              <p class="text-xs text-gray-400">Cliente verificada</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ section -->
+    <section id="faq" class="bg-gray-50 py-16">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Perguntas Frequentes</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-xl shadow-sm">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-semibold text-gray-900">
+              <span>Como usar o Kit Proteína + Leave-in + Booster?</span>
+              <svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-content px-5">
+              <p class="pb-5 text-gray-600">Lave os cabelos com shampoo, aplique a proteína reconstrutora mecha por mecha e deixe agir por 10 minutos. Enxágue, aplique o leave-in nos fios úmidos e finalize com o booster no couro cabeludo, massageando suavemente. Use 2x por semana para melhores resultados.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-semibold text-gray-900">
+              <span>Em quanto tempo vejo resultados?</span>
+              <svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-content px-5">
+              <p class="pb-5 text-gray-600">Os primeiros resultados de hidratação e maciez são visíveis já na primeira aplicação. Para crescimento e reconstrução profunda, recomendamos uso contínuo por pelo menos 4 a 8 semanas.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-semibold text-gray-900">
+              <span>O kit funciona para todos os tipos de cabelo?</span>
+              <svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-content px-5">
+              <p class="pb-5 text-gray-600">Sim! O kit foi desenvolvido para todos os tipos de cabelo: lisos, ondulados, cacheados e crespos. A fórmula é balanceada para atender diferentes necessidades capilares.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm">
+            <button class="faq-btn w-full flex items-center justify-between p-5 text-left font-semibold text-gray-900">
+              <span>Qual o prazo de entrega?</span>
+              <svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="none"><path d="M5 7l5 5 5-5" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-content px-5">
+              <p class="pb-5 text-gray-600">O prazo médio de entrega é de 5 a 10 dias úteis para todo o Brasil. Compras acima de R$ 199 têm frete grátis! Você recebe um código de rastreio por e-mail assim que o pedido for enviado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section class="bg-pink-600 py-16">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pronta para transformar seus cabelos?</h2>
+        <p class="text-pink-100 text-lg mb-8">Garanta já o seu Kit Proteína + Leave-in + Booster com desconto especial!</p>
+        <button id="cta-btn" class="bg-white text-pink-600 font-bold text-lg py-4 px-12 rounded-full hover:bg-pink-50 transition shadow-lg active:scale-95">
+          Quero meu kit agora! ✨
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Wepink</h3>
+          <p class="text-gray-400 text-sm">Beleza que transforma. Produtos de alta qualidade para cuidar de você.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Links rápidos</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#produto" class="hover:text-white transition">Produto</a></li>
+            <li><a href="#beneficios" class="hover:text-white transition">Benefícios</a></li>
+            <li><a href="#avaliacoes" class="hover:text-white transition">Avaliações</a></li>
+            <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Atendimento</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li>📧 contato@wepink.com.br</li>
+            <li>📱 (11) 99999-9999</li>
+            <li>🕐 Seg a Sex, 9h às 18h</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Redes sociais</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">📷</a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">📘</a>
+            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">🐦</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
+        <p>&copy; 2024 Wepink. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed buy button (mobile) -->
+  <div class="fixed bottom-0 inset-x-0 bg-white border-t shadow-lg p-3 md:hidden z-40">
+    <button id="mobile-buy-btn" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 rounded-full transition">
+      Comprar agora - R$ 129,90
+    </button>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-20 left-1/2 -translate-x-1/2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium shadow-lg z-50 hidden toast">
+    Produto adicionado ao carrinho! 🎉
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+    const menuLinks = mobileMenu.querySelectorAll('a');
+
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      overlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenuFn() {
+      mobileMenu.classList.remove('open');
+      overlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeMenu.addEventListener('click', closeMenuFn);
+    overlay.addEventListener('click', closeMenuFn);
+    menuLinks.forEach(link => link.addEventListener('click', closeMenuFn));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('svg');
+        const isOpen = content.classList.contains('open');
+        
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.remove('open'));
+        document.querySelectorAll('.faq-btn svg').forEach(s => s.style.transform = 'rotate(0deg)');
+        
+        // Open clicked
+        if (!isOpen) {
+          content.classList.add('open');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Toast notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+
+    // Buy buttons
+    const buyButtons = [document.getElementById('buy-btn'), document.getElementById('cta-btn'), document.getElementById('mobile-buy-btn')];
+    buyButtons.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          showToast('Produto adicionado ao carrinho! 🎉');
+        });
+      }
+    });
+  </script>
+</body>
+</html> </div>
                   <div class="box-border caret-transparent outline-[3px] relative no-underline w-full z-[4] left-0 top-0">
                    <div class="items-center box-border caret-transparent flex justify-center outline-[3px] absolute no-underline w-max right-6 bottom-2.5 md:hidden">
                     <img alt="Icon" class="caret-transparent block h-8 outline-[3px] no-underline align-baseline w-8 md:inline" src="assets/icons/icon-7.svg"/>
