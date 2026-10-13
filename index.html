@@ -118,27 +118,27 @@
    <div class="w-full max-w-[600px] flex flex-col items-center text-center gap-6">
     
     <!-- Badge -->
-    <div class="bg-[#e8fcf0] text-[#2ecc71] font-bold text-sm px-5 py-2 rounded-full inline-flex items-center gap-2">
+    <div class="bg-[#E8F5E9] text-[#2E7D32] font-semibold text-sm px-5 py-2 rounded-full inline-flex items-center gap-2 animate-pulse">
      <span class="text-base">●</span> Pessoas Usando Isso <strong>+1.327</strong>
     </div>
 
     <!-- Headline -->
-    <h1 class="text-[#0f172a] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight">
+    <h1 class="text-[#1A1A1A] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight">
      Eu vou te mostrar o sistema que está fazendo pessoas comuns ganharem R$ 1.579 em 7 dias vendendo <span class="highlight-green">Convites Digitais</span> pelo celular
     </h1>
 
     <!-- Sub-headline -->
-    <p class="text-[#64748b] text-lg leading-relaxed">
-     Pessoas que estavam sem rumo usaram isso para fazer <strong class="text-[#0f172a]">R$ 2.829</strong> em 15 dias <strong class="text-[#0f172a]">mesmo trabalhando de CLT.</strong>
+    <p class="text-[#666666] text-lg leading-relaxed">
+     Pessoas que estavam sem rumo usaram isso para fazer <strong class="text-[#1A1A1A]">R$ 2.829</strong> em 15 dias <strong class="text-[#1A1A1A]">mesmo trabalhando de CLT.</strong>
     </p>
 
     <!-- Info Box -->
-    <div class="bg-[#fef3c7] border border-[#fde68a] text-[#92400e] rounded-lg px-6 py-4 text-sm font-medium w-full">
+    <div class="bg-[#FFF9C4] border border-[#FDE68A] text-[#795548] rounded-lg px-6 py-4 text-sm font-medium w-full">
      Aqui você não vai ver atores pagos, aplicativos falsos ou joguinhos fajutos.
     </div>
 
     <!-- CTA Button -->
-    <a href="#" class="btn-cta">
+    <a href="#" class="btn-cta" id="cta-button">
      Iniciar Agora
      <span class="arrow-circle">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,14 +148,34 @@
     </a>
 
     <!-- Footer Text -->
-    <p class="text-[#94a3b8] text-xs uppercase tracking-widest font-medium">
+    <p class="text-[#78909C] text-xs uppercase tracking-widest font-medium">
      Toque no botão para iniciar
     </p>
 
    </div>
   </main>
+
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#1A1A1A] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg opacity-0 translate-y-4 pointer-events-none transition-all duration-300 z-50">
+    Em breve você será redirecionado!
+  </div>
+
+  <script>
+    const ctaButton = document.getElementById('cta-button');
+    const toast = document.getElementById('toast');
+
+    ctaButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      toast.classList.remove('opacity-0', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3000);
+    });
+  </script>
  </body>
-</html>ne w-[0%] rounded-r-[10px]">
+</html>
                       </div>
                      </div>
                     </div>
